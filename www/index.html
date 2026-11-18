@@ -347,7 +347,20 @@ img,svg,video{max-width:100%}
   [style*="grid-template-columns:1fr 2fr 1fr 1.3fr"]{grid-template-columns:1fr!important}
   [style*="min-width:220px"]{min-width:0!important}
   .toast{left:12px;right:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));justify-content:flex-start}
+  /* en-tête compact : boutons sur une ligne, jamais écrasés sur 2 lignes */
+  .header-right{flex:1 1 100%;justify-content:flex-start}
+  .header .btn,.header .btn-sm{min-height:30px;padding:4px 9px;font-size:12px}
+  .header .badge,.header .apikey-btn,.header .cloud-btn,.header .offline-label,.header .btn{white-space:nowrap;flex:0 0 auto}
+  .header .badge{padding:5px 9px}
+  .header .apikey-btn,.header .cloud-btn{padding:5px 9px;min-height:30px}
+  .logo{white-space:nowrap}
+  #logoutBtn .btn-label{display:none}
 }
+/* sécurité anti-débordement horizontal (WebView Android) */
+html,body{max-width:100%}
+.app,.main,.card,.q-item,.attempt-row,.corr-item,.detail-q,.choice-card{min-width:0;max-width:100%}
+.main img,.card img,table{max-width:100%}
+.card,.q-item,.quiz-q,.quiz-opt,.corr-q,.detail-q-text{overflow-wrap:anywhere}
 @media(max-width:600px){
   .stats-grid{grid-template-columns:1fr 1fr 1fr;gap:6px}
   .stat-lbl{font-size:9.5px;letter-spacing:.3px}
@@ -396,9 +409,9 @@ img,svg,video{max-width:100%}
     <button class="btn btn-sm hidden" id="myAccountBtn" onclick="openMyAccountModal()" title="Changer mon mot de passe">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </button>
-    <button class="btn btn-sm hidden" id="logoutBtn" onclick="logout()">
+    <button class="btn btn-sm hidden" id="logoutBtn" aria-label="Déconnexion" title="Déconnexion" onclick="logout()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-      Déconnexion
+      <span class="btn-label">Déconnexion</span>
     </button>
     <span id="headerLogoRightMount" style="display:none;align-items:center"></span>
   </div>
