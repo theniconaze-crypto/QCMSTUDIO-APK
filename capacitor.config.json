@@ -3,5 +3,8 @@
   "appName": "QCM Studio",
   "webDir": "www",
   "backgroundColor": "#12171f",
-  "android": { "allowMixedContent": false }
+  "android": {
+    "allowMixedContent": false,
+    "adjustMarginsForEdgeToEdge": "auto"
+  }
 }
