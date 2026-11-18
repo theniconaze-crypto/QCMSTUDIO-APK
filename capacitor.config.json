@@ -1,0 +1,7 @@
+{
+  "appId": "com.qcmstudio.app",
+  "appName": "QCM Studio",
+  "webDir": "www",
+  "backgroundColor": "#12171f",
+  "android": { "allowMixedContent": false }
+}
